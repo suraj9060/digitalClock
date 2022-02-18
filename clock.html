@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock"></div>
+
+    
+
+    <script>
+
+        function showClock(){
+
+             let date = new Date()
+        let h = date.getHours()
+        let m = date.getMinutes()
+        let s = date.getSeconds()
+        let ampm = "AM"
+         if(h===0){
+             h=12
+         }
+
+         if(h > 12){
+             h = h-12
+             ampm = "PM"
+         }
+
+          let clock = document.getElementById("clock")
+          clock.innerHTML = `<h1>${h} :${m} :${s} ${ampm}</h1>`
+
+          setTimeout(showClock , 1000)
+
+
+        } showClock()
+       
+
+    </script>
+</body>
+</html>
